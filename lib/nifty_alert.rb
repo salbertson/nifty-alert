@@ -12,7 +12,7 @@ class NiftyAlert
       Faraday.post(
         SERVICE_URL,
         description: @description,
-        recipients: self.class.recipients,
+        recipients: self.class.recipients.join(","),
         current_number: number,
         threshold: threshold
       )
