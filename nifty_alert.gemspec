@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Scott Albertson"]
   spec.email         = ["hello@scottalbertson.com"]
   spec.summary       = %q{Keep an eye on anything with a threshold, especially queues.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/salbertson/nifty-alert"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
