@@ -9,7 +9,13 @@ class NiftyAlert
 
   def report(number, threshold)
     if number > threshold
-      Faraday.post(SERVICE_URL, description: @description, recipients: self.class.recipients)
+      Faraday.post(
+        SERVICE_URL,
+        description: @description,
+        recipients: self.class.recipients,
+        current_number: number,
+        threshold: threshold
+      )
     end
   rescue
     nil
