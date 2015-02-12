@@ -1,5 +1,9 @@
 # NiftyAlert
 
+The gem will let you report when something reaches a threshold, such as a job
+queue, and will intelligently alert whoever or whatever is configured to
+receive alerts.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -14,7 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
-Add this to an initializer:
+Set up recipients, maybe in a Rails initializer. Recipients can be email
+addresses or Slack channels.
 
 ```ruby
 NiftyAlert.recipients = [
@@ -23,7 +28,8 @@ NiftyAlert.recipients = [
 ]
 ```
 
-Report when something reaches a threshold, such as your job queue:
+Report whatever you would like to monitor, such as the number of jobs in your
+queue, along with a threshold:
 
 ```ruby
 class EmailJob
