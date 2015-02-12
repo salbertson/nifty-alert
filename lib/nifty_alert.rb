@@ -18,7 +18,7 @@ class NiftyAlert
       )
     end
   rescue => error
-    if ENV["debug"]
+    if self.class.debug
       puts error
     end
 
@@ -31,5 +31,13 @@ class NiftyAlert
 
   def self.recipients
     @recipients
+  end
+
+  def self.debug=(debug)
+    @debug = debug
+  end
+
+  def self.debug
+    @debug
   end
 end
