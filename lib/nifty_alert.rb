@@ -17,7 +17,11 @@ class NiftyAlert
         threshold: threshold
       )
     end
-  rescue
+  rescue => error
+    if ENV["debug"]
+      puts error
+    end
+
     nil
   end
 
