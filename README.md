@@ -18,12 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-Set up recipients, maybe in a Rails initializer. Recipients can be email
-addresses or Slack channels.
+Set up recipients, maybe in a Rails initializer. Recipients can be
+Slack channels, with email support coming soon.
 
 ```ruby
 NiftyAlert.recipients = [
-  "dude@example.com",
   "https://mycompany.slack.com/services/hooks/slackbot?token=123abc4567def&channel=%23dev"
 ]
 ```
@@ -34,7 +33,7 @@ queue, along with a threshold:
 ```ruby
 class EmailJob
   def before(job)
-    nifty_alert = NiftyAlert.new(:email)
+    nifty_alert = NiftyAlert.new(:job_queue)
     nifty_alert.report(Delayed::Job.count, 1_000)
   end
 
