@@ -3,13 +3,13 @@ require "faraday"
 class NiftyAlert
   SERVICE_URL = "https://nifty-alert-production.herokuapp.com/alerts"
 
-  def initialize(id)
-    @id = id
+  def initialize(description)
+    @description = description
   end
 
   def report(number, threshold)
     if number > threshold
-      Faraday.post(SERVICE_URL, id: @id, recipients: self.class.recipients)
+      Faraday.post(SERVICE_URL, description: @description, recipients: self.class.recipients)
     end
   rescue
     nil
