@@ -41,6 +41,10 @@ class EmailJob
 end
 ```
 
+If the threshold has been reached, your Slack channel will be notified.
+
+Don't worry, NiftyAlert will only alert you of an overage once every 15 minutes.
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/nifty_alert/fork )
